@@ -1,0 +1,47 @@
+{
+  "main": "node_modules/expo/AppEntry.js",
+  "scripts": {
+    "start": "expo start",
+    "android": "expo start --android",
+    "ios": "expo start --ios",
+    "web": "expo start --web",
+    "eject": "expo eject"
+  },
+  "dependencies": {
+    "@react-native-community/masked-view": "0.1.5",
+    "@react-navigation/drawer": "^5.4.0",
+    "@react-navigation/native": "^5.1.4",
+    "@react-navigation/stack": "^5.2.9",
+    "echarts": "^4.7.0",
+    "expo": "36.0.0",
+    "expo-camera": "~8.0.0",
+    "expo-font": "~8.0.0",
+    "expo-image-picker": "~8.0.0",
+    "native-base": "2.13.8",
+    "prop-types": "^15.7.2",
+    "react": "16.9.0",
+    "react-dom": "16.9.0",
+    "react-native": "https://github.com/expo/react-native/archive/sdk-36.0.0.tar.gz",
+    "react-native-base64": "0.0.2",
+    "react-native-dialog": "^5.6.0",
+    "react-native-gesture-handler": "^1.5.6",
+    "react-native-loading-spinner-overlay": "^1.1.0",
+    "react-native-progress": "^4.1.0",
+    "react-native-pure-chart": "0.0.24",
+    "react-native-reanimated": "^1.4.0",
+    "react-native-safe-area-context": "0.6.0",
+    "react-native-screens": "2.0.0-alpha.12",
+    "react-native-simple-dialogs": "^1.2.1",
+    "react-native-simple-toast": "^1.0.0",
+    "react-native-web": "0.11.7",
+    "react-native-webview-leaflet": "5.0.2",
+    "react-navigation": "^4.3.6",
+    "react-navigation-drawer": "^2.4.10",
+    "react-navigation-stack": "^2.3.10"
+  },
+  "devDependencies": {
+    "babel-preset-expo": "8.0.0",
+    "@babel/core": "7.0.0"
+  },
+  "private": true
+}

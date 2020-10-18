@@ -1,0 +1,30 @@
+{
+  "database_user": "system_trasho",
+  "database_host": "localhost",
+  "database_db": "trasho",
+  "database_password": "TECH",
+  "database_port": 5432,
+
+  "server_port": 4550,
+
+  "url_base" : "/api/",
+  "url_poubelle" : "/api/trash",
+  "url_signalement" : "/api/report",
+  "url_utilisateur" : "/api/user",
+  "url_type" : "/api/type",
+
+  "url_base_admin" : "admin",
+
+  "log_mode":"info",
+
+
+  "cron_purge":"*/1 * * * *",
+  "time_before_delete_signalement":90,
+
+  "cron_batch_delete_poubelle":"*/1 * * * *",
+
+
+  "token_api":"eef0c396c1a2c19d3119217a759fad0d6ab57465cb9241e80277378bfd970236",
+
+  "fin":"ne pas ajouter de ligne en dessous"
+}

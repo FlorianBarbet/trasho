@@ -1,0 +1,68 @@
+<%- include('header', {title: 'Trasho - Confirmation mail'})%>
+    <style>
+        body{
+            background-color: #95D47A;
+            color: #373737;
+        }
+        #all{
+            text-align: center;
+            margin : 0 auto;
+        }
+        h1{
+            margin-top: 0;
+        }
+        #explain{
+            margin-bottom: 0;
+        }
+        #newMail{
+            background-color: #00B0B2;
+            padding: 15px 30px;
+            border-radius: 4px;
+            border: none;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="all">
+        <img alt="Trasho Logo" src="https://i.ibb.co/WGzKX8k/logo-Convert-Image.png" id="logo"/>
+        <h1>Bienvenue chez Trasho</h1> 
+        <div id="text">Vérification de votre inscription...</div>
+    </div>
+
+    <script>
+        function newMail(){
+            var newToken = new XMLHttpRequest();
+            newToken.open("POST", JSON.parse('<%- api_user %>') + "/newToken/" + JSON.parse('<%- token %>'));
+            newToken.setRequestHeader("token_api","eef0c396c1a2c19d3119217a759fad0d6ab57465cb9241e80277378bfd970236");
+            newToken.send(null);
+            text.innerHTML="Un nouveau mail de confirmation vous a été envoyé sur votre adresse mail !"
+        }
+
+        const text = document.querySelector("#text");
+        var checkToken = new XMLHttpRequest();
+        checkToken.open("GET", JSON.parse('<%- api_user %>') + "/token/" + JSON.parse('<%- token %>'), false);
+        checkToken.setRequestHeader("token_api","eef0c396c1a2c19d3119217a759fad0d6ab57465cb9241e80277378bfd970236");
+        checkToken.send(null);
+        if(checkToken.responseText == "{}"){
+            text.innerHTML = "Votre compte n'existe pas.";
+            throw 'Votre compte n\'existe pas.';
+        }
+
+        var noExpiredToken = new XMLHttpRequest();
+        noExpiredToken.open("GET", JSON.parse('<%- api_user %>') + "/noExpiredToken/" + JSON.parse('<%- token %>'), false);
+        noExpiredToken.setRequestHeader("token_api","eef0c396c1a2c19d3119217a759fad0d6ab57465cb9241e80277378bfd970236");
+        noExpiredToken.send(null);
+        if(noExpiredToken.responseText == "{}"){
+            text.innerHTML = "<p id=\"explain\">Vous avez dépassé le délai pour la confirmation d'une adresse email.</p><br/>" + 
+                "<button id=\"newMail\" onclick=\"newMail()\">Redemander un mail de confirmation</button>";
+        } else {
+            var xmlHttp = new XMLHttpRequest();
+            xmlHttp.open("POST", JSON.parse('<%- api_user %>') + "/validMail/" + JSON.parse('<%- token %>'), true);
+            xmlHttp.setRequestHeader("token_api","eef0c396c1a2c19d3119217a759fad0d6ab57465cb9241e80277378bfd970236");
+            xmlHttp.send(null);
+            document.getElementById("text").innerHTML = "Votre mail est bien confirmé !";
+        }
+    </script>
+</body>

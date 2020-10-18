@@ -1,3 +1,10 @@
+# Authors
+
++ Raphaël Mouloukin
++ Anthony Couture
++ Lucas Laloux
++ Florian Barbet
+
 # Initialisation du projet
 
 WS :

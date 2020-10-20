@@ -19,7 +19,7 @@ EXECUTE FUNCTION func_maj_niveau();
 
 UPDATE public.utilisateur
 	SET experience = 110
-	WHERE mail = 'lucas.laloux3011@gmail.com';
+	WHERE mail = 'toto@toto.com';
 	
 UPDATE public.utilisateur
 	SET niveau = 0;
